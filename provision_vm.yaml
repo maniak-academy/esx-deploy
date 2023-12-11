@@ -1,0 +1,10 @@
+---
+- name: Provision VM
+  hosts: localhost
+  gather_facts: false
+  connection: local
+
+  tasks:
+  - name: Deploy VM
+    import_role:
+      name: esxi_ubuntu_deploy

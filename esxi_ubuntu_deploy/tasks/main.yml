@@ -1,0 +1,28 @@
+---
+# tasks file for esxi_ubuntu_deploy
+- name: Deploy VM
+  community.vmware.vmware_guest:
+    hostname: '{{ vcenter_hostname }}'
+    username: '{{ vcenter_username }}'
+    password: '{{ vcenter_password }}'
+    validate_certs: no
+    datacenter: '{{ datacenter_name }}'
+    cluster: '{{ cluster_name }}'
+    folder: '{{ vm_folder }}'
+    name: '{{ vm_name }}'
+    state: poweredon
+    guest_id: '{{ guest_os_id }}'
+    datastore: '{{ datastore_name }}'
+    hardware:
+      memory_mb: '{{ vm_memory_mb }}'
+      num_cpus: '{{ vm_num_cpus }}'
+    disk:
+      - size_gb: '{{ disk_size_gb }}'
+        type: thin
+        datastore: '{{ datastore_name }}'
+    cdrom:
+      type: iso
+      iso_path: '[{{ datastore_name }}] {{ iso_file_path }}'
+    networks:
+      - name: '{{ network_name }}'
+        device_type: vmxnet3
