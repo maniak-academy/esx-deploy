@@ -1,10 +1,10 @@
 ---
 # defaults file for esxi_ubuntu_deploy
-hostname: '{{ vcenter_hostname }}'
-username: '{{ vcenter_username }}'
-password: '{{ vcenter_password }}'
-validate_certs: no
-datacenter: '{{ datacenter_name }}'
-cluster: '{{ cluster_name }}'
-state: poweredon
-datastore_name: datastore1
+esxi_hostname: '172.16.10.5'
+esxi_username: 'root'
+esxi_password: 'W3lcome098!'
+vm_name: 'UbuntuVM'
+datastore: 'datastore1'
+iso_path: '[datastore1] images/ubuntu-22.04.3-live-server-amd64.iso'
+network_name: 'VM Network'
+vm_guest_id: 'ubuntu64Guest'

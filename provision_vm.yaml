@@ -6,5 +6,5 @@
 
   tasks:
   - name: Deploy VM
-    import_role:
-      name: esxi_ubuntu_deploy
+    roles:
+      - esxi_ubuntu_deploy
