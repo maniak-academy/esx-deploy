@@ -28,8 +28,3 @@
     networks:
       - name: '{{ network_name }}'
         device_type: vmxnet3
-    customization:
-      globalIPSettings:
-      userData:
-        computerName: '{{ vm_name }}'
-        customScript: "{{ lookup('file', 'files/cloud-init-user-data.yml') | b64encode }}"
