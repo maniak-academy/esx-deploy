@@ -3,7 +3,7 @@
 hostname_name: 'vc.maniak.lab'
 username: 'Administrator@maniak.lab'
 password: 'W3lcome098!'
-vm_name: 'vault01.maniak.lab'
+vm_name: '{{vm_name}}.maniak.lab'
 datastore_name: 'datastore1'
 iso_file_path: 'images/ubuntu-22.04.3-live-server-amd64.iso'
 network_name: 'VM Network'
