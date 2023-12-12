@@ -1,26 +1,26 @@
-# tasks/main.yml
-- name: Deploy Ubuntu VM on ESXi
+---
+# tasks file for esxi_ubuntu_deploy
+- name: Deploy VM
   community.vmware.vmware_guest:
-    hostname: "{{ esxi_hostname }}"
-    username: "{{ esxi_username }}"
-    password: "{{ esxi_password }}"
+    hostname: 'vc.maniak.lab'
+    username: 'Administrator@maniak.lab'
+    password: 'W3lcome098!'
     validate_certs: no
-    name: "{{ vm_name }}"
-    datastore: "{{ datastore }}"
-    folder: "/vm"
-    guest_id: "{{ vm_guest_id }}"
+    datacenter: '{{ datacenter_name }}'
+    name: '{{ vm_name }}'
+    state: poweredon
+    guest_id: '{{ guest_os_id }}'
+    datastore: '{{ datastore_name }}'
     hardware:
-      memory_mb: 1024
-      num_cpus: 2
+      memory_mb: '2048'
+      num_cpus: '1'
     disk:
-      - size_gb: 10
+      - size_gb: '25'
         type: thin
-        datastore: "{{ datastore }}"
+        datastore: '{{ datastore_name }}'
     cdrom:
       type: iso
-      iso_path: "{{ iso_path }}"
+      iso_path: '[{{ datastore_name }}] {{ iso_file_path }}'
     networks:
-      - name: "{{ network_name }}"
+      - name: '{{ network_name }}'
         device_type: vmxnet3
-    state: poweredon
-  delegate_to: localhost
