@@ -10,7 +10,7 @@
     name: '{{ vm_name }}'
     state: poweredon
     guest_id: '{{ vm_guest_id }}'
-    folder: '{{ folder }}'
+    folder: "/{{ datacenter_name }}/vm"
     datastore: '{{ datastore_name }}'
     hardware:
       memory_mb: '2048'

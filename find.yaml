@@ -1,0 +1,19 @@
+---
+- name: Get VM Info
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Get VM folder location
+      community.vmware.vmware_guest_info:
+        hostname: "vc.maniak.lab"
+        username: "Administrator@maniak.lab"
+        password: "W3lcome098!"
+        validate_certs: no
+        datacenter: "Datacenter"
+        name: "ansible.maniak.lab"
+      delegate_to: localhost
+      register: vm_info
+
+    - name: Display VM folder location
+      debug:
+        msg: "VM Folder Location: {{ vm_info['guest']['folder'] }}"
