@@ -7,7 +7,7 @@
     password: '{{ password }}'
     validate_certs: no
     datacenter: '{{ datacenter_name }}'
-    name: '{{ vm_name }}'
+    name: '{{ vm_name }}.maniak.lab'
     state: poweredon
     guest_id: '{{ vm_guest_id }}'
     folder: "/{{ datacenter_name }}/vm"
