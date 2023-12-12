@@ -2,11 +2,11 @@
 - name: Provision VM
   hosts: localhost
   gather_facts: false
-  connection: local
+  connection: 
+    - local
+    - community.vmware
 
-  tasks:
-  - name: Deploy VM
-    collections:
-      - community.vmware
-    import_role:
-      name: esxi_ubuntu_deploy
+  roles:
+    - esxi_ubuntu_deploy
+
+
