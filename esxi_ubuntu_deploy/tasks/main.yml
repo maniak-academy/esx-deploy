@@ -21,7 +21,7 @@
         datastore: '{{ datastore_name }}'
     cdrom:
       - type: iso
-        iso_path: '[datastore1] images/ubuntu-22.04.3-live-server-amd64.iso'
+        iso_path: '[datastore1]images/ubuntu-22.04.3-live-server-amd64.iso'
     networks:
       - name: '{{ network_name }}'
         device_type: vmxnet3
