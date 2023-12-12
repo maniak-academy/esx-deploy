@@ -6,5 +6,7 @@
 
   tasks:
   - name: Deploy VM
+    collections:
+      - community.vmware
     import_role:
       name: esxi_ubuntu_deploy

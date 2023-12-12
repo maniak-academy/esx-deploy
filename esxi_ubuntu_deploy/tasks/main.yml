@@ -2,9 +2,9 @@
 # tasks file for esxi_ubuntu_deploy
 - name: Deploy VM
   community.vmware.vmware_guest:
-    hostname: 'vc.maniak.lab'
-    username: 'Administrator@maniak.lab'
-    password: 'W3lcome098!'
+    hostname: '{{ hostname_name }}'
+    username: '{{ username }}'
+    password: '{{ password }}'
     validate_certs: no
     datacenter: '{{ datacenter_name }}'
     name: '{{ vm_name }}'
