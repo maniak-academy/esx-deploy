@@ -21,6 +21,9 @@
         datastore: '{{ datastore_name }}'
     cdrom:
       - type: iso
+        controller_number: 0
+        unit_number: 0
+        state: present
         iso_path: '[datastore1]images/ubuntu-22.04.3-live-server-amd64.iso'
     networks:
       - name: '{{ network_name }}'
