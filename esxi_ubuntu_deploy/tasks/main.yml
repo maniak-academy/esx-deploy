@@ -9,7 +9,7 @@
     datacenter: '{{ datacenter_name }}'
     name: '{{ vm_name }}'
     state: poweredon
-    guest_id: '{{ guest_os_id }}'
+    guest_id: '{{ vm_guest_id }}'
     datastore: '{{ datastore_name }}'
     hardware:
       memory_mb: '2048'
