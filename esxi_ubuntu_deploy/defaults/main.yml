@@ -1,6 +1,6 @@
 ---
 # defaults file for esxi_ubuntu_deploy
-hostname: 'vc.maniak.lab'
+hostname_name: 'vc.maniak.lab'
 username: 'Administrator@maniak.lab'
 password: 'W3lcome098!'
 vm_name: 'UbuntuVM'
