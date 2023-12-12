@@ -2,9 +2,7 @@
 - name: Provision VM
   hosts: localhost
   gather_facts: false
-  connection: 
-    - local
-    - community.vmware
+  connection: local
 
   roles:
     - esxi_ubuntu_deploy
