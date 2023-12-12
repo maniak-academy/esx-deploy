@@ -1,0 +1,57 @@
+#cloud-config
+
+# The cloud-config file should start with the above line
+
+# Hostname setup
+hostname: '{{vm_name}}'
+fqdn: '{{vm_name}}'
+
+# Manage users and groups
+users:
+  - name: smaniak
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, admin
+    home: /home/smaniak
+    shell: /bin/bash
+    lock_passwd: true
+    passwd: "W3lcome098!"
+
+
+# Update and upgrade the system on first boot
+package_update: true
+package_upgrade: true
+
+# Install additional packages
+packages:
+  - python3-pip
+  - git
+
+# Run commands on first boot
+runcmd:
+  - systemctl enable ssh
+  - systemctl start ssh
+  # Install Docker
+  # - curl -fsSL https://get.docker.com -o get-docker.sh
+  # - sh get-docker.sh
+
+  # # Enable and start nginx
+  # - systemctl enable nginx
+  # - systemctl start nginx
+
+# Write arbitrary files
+write_files:
+  - path: /etc/motd
+    content: |
+      Welcome to your Ubuntu VM, managed by Ansible and cloud-init!
+    owner: root:root
+    permissions: '0644'
+
+# Configure timezone
+timezone: UTC
+
+# Set up mount points
+# mounts:
+#   - [ /dev/disk/by-id/scsi-1234567890-part1, /mnt/data, ext4 ]
+
+# Disable cloud-init's network configuration capabilities
+network: {config: disabled}
