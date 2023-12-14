@@ -16,7 +16,7 @@
       memory_mb: '2048'
       num_cpus: '2'
     disk:
-      - size_gb: '100'
+      - size_gb: '150'
         type: thin
         datastore: '{{ datastore_name }}'
     cdrom:
