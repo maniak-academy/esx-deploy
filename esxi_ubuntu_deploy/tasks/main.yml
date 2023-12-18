@@ -13,10 +13,10 @@
     folder: "/{{ datacenter_name }}/vm"
     datastore: '{{ datastore_name }}'
     hardware:
-      memory_mb: '2048'
-      num_cpus: '2'
+      memory_mb: '{{memory_mb}}'
+      num_cpus: '{{num_cpus}}'
     disk:
-      - size_gb: '150'
+      - size_gb: '{{size_gb}}'
         type: thin
         datastore: '{{ datastore_name }}'
     cdrom:
